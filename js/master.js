@@ -1,6 +1,9 @@
 (() => {
+
+    const cars = document.querySelectorAll('.data-ref');
+
     function getData() {
-        let targetURL = `./includes/connect.php?modelNo="${this.id}"`;
+        let targetURL = `./includes/connect.php?modelNo=${this.id}`;
 
         fetch(targetURL) //go get the data and bring it back! good doggy
         .then(res => res.json()) // turn the result into a plain JS object
@@ -25,7 +28,9 @@
         document.querySelector('.modelDetails').textContent = modelDetails;
     }
 
-    getData(); //trigger the getData function
+    cars.forEach(car => car.addEventListener("click", getData));
+
+    // getData(); //trigger the getData function
 
 
 })();
