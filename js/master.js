@@ -1,4 +1,5 @@
 (() => {
+    //rewokr this with a vue instance
 
     const cars = document.querySelectorAll('.data-ref');
 
